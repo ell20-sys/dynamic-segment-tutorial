@@ -1,26 +1,21 @@
-//main.jsx
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
 
-import 
-{
+import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
   Route
 } from 'react-router-dom';
-import Book from './book';
-import Bookshop from './bookshop';
-import Publisher from './publisher';
+
+import Home from './pages/home';
+import Navbar from './components/Navbar'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route path='/' element={<Book />}></Route>
-      <Route path='bookshop' element={<Bookshop />} />
- 👉  <Route path='publisher/:itemId' element={<Publisher />} />
+    <Route  path='/' element={<Home />}>
+      <Route path='/' element={<Navbar />} />
     </Route>
   )
 )
