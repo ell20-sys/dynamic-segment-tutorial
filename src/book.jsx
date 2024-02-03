@@ -1,16 +1,27 @@
-export default function Book() {
-    return (
-        <>
-            <main className="px-4">
-                <ul>
-                    <ol>77 Ways get to more customers By: <i>Ubuy</i></ol>
-                    <ol>Authenticity By: <i>Emanuel Rose</i> </ol>
-                    <ol> Change Your thinking change your life By: <i>Brian Tracy</i></ol>
-    
-                👉 <a href="bookshop" className="text-blue-600 inline-block px-4 underline">see bookshop</a>
-                    {/* <a href="publisher/itemId" className="text-blue-600 underline">Publisher</a> */}
-                </ul>
-            </main>
-        </>
-    )
-    }
+import { Link } from 'react-router-dom';
+import book from './books.js';
+
+export default function Books() {
+  
+  return (
+    <>
+      <div className='m-4'>
+        <p className="text-3xl">{`List of my favourite books`}</p>
+      </div>
+
+      <div className='m-4'> 
+        {
+          book && book.map((book)=> (
+            <>
+            <ul>
+              <li>
+                <Link to={`newbooks/${book.id}`} className='text-blue-600 underline'>{book.title}</Link>
+              </li>
+            </ul>
+          </>
+          )) 
+        }
+      </div>
+    </>
+  )
+}   
